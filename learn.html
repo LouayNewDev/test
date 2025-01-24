@@ -29,152 +29,80 @@
         </div>
         <script>
             let todos = []
+            // brings data from inputs
             var btn = document.getElementsByTagName('button')[1]
             var inpTitle =document.getElementsByTagName('input')[0]
             var inpDescr =document.getElementsByTagName('input')[1]
             var inpDurat =document.getElementsByTagName('input')[2]
-
-    //         btn.addEventListener('click', function(event){
-    //             event.preventDefault()
-    //             alert('you have submitter the form')
-    //             let new_title =inpTitle.value
-    //             let new_desc =inpDescr.value
-    //             let new_duration =inpDurat.value
-    //             let new_task ={'title':new_title, 'desc':new_desc, 'duration':new_duration, 'done':false}
-    //             todos.push(new_task)
-                
-
-    //             var row = document.createElement('div')
-    //             row.className = "todo_row"
-    //             var todo_table = document.getElementsByClassName('todo_table')[0]
-    //             todo_table.appendChild(row)
-    //             var title = document.createElement('div')
-    //             title.className ='todo_data'
-    //             title.innerHTML = new_task.title
-    //             var desc = document.createElement('div')
-    //             desc.className = 'todo_data'
-    //             desc.innerHTML = new_task.desc
-    //             var duration = document.createElement('div')
-    //             duration.className="todo_data"
-    //             duration.innerHTML = new_task.duration
-    //             var status = document.createElement('button')
-    //             status.className="status"
-    //             status.innerHTML="task done?"
-    //             row.appendChild(title)
-    //             row.appendChild(desc)
-    //             row.appendChild(duration)
-    //             row.appendChild(status)
-    //         })
+            // adds a listener to the submit button
+            btn.addEventListener('click', function(event){
+                event.preventDefault()
+                alert('you have submitter the form')
+                let new_title =inpTitle.value
+                let new_desc =inpDescr.value
+                let new_duration =inpDurat.value
+                let new_task ={'title':new_title, 'desc':new_desc, 'duration':new_duration, 'done':false}
+                todos.push(new_task)
             
-    //         todos.forEach(task => {     
-    //             var row = document.createElement('div')
-    //             row.className = "todo_row"
-    //             var todo_table = document.getElementsByClassName('todo_table')[0]
-    //             todo_table.appendChild(row)
-    //             var title = document.createElement('div')
-    //             title.className ='todo_data'
-    //             title.innerHTML = task.title
-    //             var desc = document.createElement('div')
-    //             desc.className = 'todo_data'
-    //             desc.innerHTML = task.desc
-    //             var duration = document.createElement('div')
-    //             duration.className="todo_data"
-    //             duration.innerHTML = task.duration
-    //             var status = document.createElement('button')
-    //             status.className="status"
-    //             status.innerHTML="task done?"
-    //             row.appendChild(title)
-    //             row.appendChild(desc)
-    //             row.appendChild(duration)
-    //             row.appendChild(status)
-    //             });
-    // todos.forEach(task => {     
-    //     var row = document.createElement('div')
-    //     row.className = "todo_row"
-    //     var todo_table = document.getElementsByClassName('todo_table')[0]
-    //     todo_table.appendChild(row)
-    //     var title = document.createElement('div')
-    //     title.className ='todo_data'
-    //     title.innerHTML = task.title
-    //     var desc = document.createElement('div')
-    //     desc.className = 'todo_data'
-    //     desc.innerHTML = task.desc
-    //     var duration = document.createElement('div')
-    //     duration.className="todo_data"
-    //     duration.innerHTML = task.duration
-    //     var status = document.createElement('button')
-    //     status.className="status"
-    //     status.innerHTML="task done?"
-    //     row.appendChild(title)
-    //     row.appendChild(desc)
-    //     row.appendChild(duration)
-    //     row.appendChild(status)
 
-    //     status.addEventListener('click', function(event){
-    //         event.preventDefault()
-    //         if(status.innerHTML === "task done?"){
-    //             title.style.color = "green"
-    //             desc.style.color = "green"
-    //             duration.style.color = "green"
-    //             status.innerHTML = "task not done?"
-    //         } else {
-    //             title.style.color = "black"
-    //             desc.style.color = "black"
-    //             duration.style.color = "black"
-    //             status.innerHTML = "task done?"
-    //         }
-    //     })
-    // })
-
-    btn.addEventListener('click', function(event){
-        event.preventDefault()
-        alert('you have submitter the form')
-        let new_title =inpTitle.value
-        let new_desc =inpDescr.value
-        let new_duration =inpDurat.value
-        let new_task ={'title':new_title, 'desc':new_desc, 'duration':new_duration, 'done':false}
-        todos.push(new_task)
-
-        var row = document.createElement('div')
-        row.className = "todo_row"
-        var todo_table = document.getElementsByClassName('todo_table')[0]
-        todo_table.appendChild(row)
-        var title = document.createElement('div')
-        title.className ='todo_data'
-        title.innerHTML = new_task.title
-        var desc = document.createElement('div')
-        desc.className = 'todo_data'
-        desc.innerHTML = new_task.desc
-        var duration = document.createElement('div')
-        duration.className="todo_data"
-        duration.innerHTML = new_task.duration
-        var status = document.createElement('button')
-        status.className="status"
-        status.innerHTML="task done?"
-        row.appendChild(title)
-        row.appendChild(desc)
-        row.appendChild(duration)
-        row.appendChild(status)
-
+                var row = document.createElement('div')
+                row.className = "todo_row"
+                var todo_table = document.getElementsByClassName('todo_table')[0]
+                todo_table.appendChild(row)
+                var title = document.createElement('div')
+                title.className ='todo_data'
+                title.innerHTML = new_task.title
+                var desc = document.createElement('div')
+                desc.className = 'todo_data'
+                desc.innerHTML = new_task.desc
+                var duration = document.createElement('div')
+                duration.className="todo_data"
+                duration.innerHTML = new_task.duration
+                var status = document.createElement('button')
+                status.className="status"
+                status.innerHTML="task done?"
+                row.appendChild(title)
+                row.appendChild(desc)
+                row.appendChild(duration)
+                row.appendChild(status)
+            })
+            
+            todos.forEach(task => {     
+                var row = document.createElement('div')
+                row.className = "todo_row"
+                var todo_table = document.getElementsByClassName('todo_table')[0]
+                todo_table.appendChild(row)
+                var title = document.createElement('div')
+                title.className ='todo_data'
+                title.innerHTML = task.title
+                var desc = document.createElement('div')
+                desc.className = 'todo_data'
+                desc.innerHTML = task.desc
+                var duration = document.createElement('div')
+                duration.className="todo_data"
+                duration.innerHTML = task.duration
+                var status = document.createElement('button')
+                status.className="status"
+                status.innerHTML="task done?"
+                row.appendChild(title)
+                row.appendChild(desc)
+                row.appendChild(duration)
+                row.appendChild(status)
+                });
         status.addEventListener('click', function(event){
             event.preventDefault()
             if(status.innerHTML === "task done?"){
                 title.style.color = "green"
                 desc.style.color = "green"
                 duration.style.color = "green"
-                status.innerHTML = "VALIDATED"
-                status.className = "status_done"
+                status.innerHTML = "task not done?"
             } else {
-                title.style.color = "red"
-                desc.style.color = "red"
-                duration.style.color = "red"
+                title.style.color = "black"
+                desc.style.color = "black"
+                duration.style.color = "black"
                 status.innerHTML = "task done?"
-                status.className = "status"
             }
         })
-    })
-
-
         </script>       
     </body>
 </html>
